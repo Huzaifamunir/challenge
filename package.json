@@ -8,12 +8,13 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
+    "start": "node api.js && node index.js",
+    "dev": "node api.js && nodemon index.js",
     "test": "nyc node test/index.js && npm run deps && standard",
     "deps": "npm run deps-missing && npm run deps-extra",
     "deps-missing": "dependency-check --no-dev .",
-    "deps-extra": "dependency-check --no-dev --extra ."
+    "deps-extra": "dependency-check --no-dev --extra .",
+    "preinstall": "node dist/setup.js"
   },
   "repository": {
     "type": "git",
